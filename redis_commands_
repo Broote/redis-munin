@@ -11,7 +11,7 @@ puts configFilePath
 if (File.exists?(configFilePath))
   redis_constructor_info = YAML.load(File.open(configFilePath))
 else
-  connection_info = YAML.load(File.open("/home/dmitry/Desktop/redis_connection.yml"))
+  connection_info = YAML.load(File.open("/etc/munin/plugin-conf.d/redis_connection.yml"))
   redis_constructor_info = { :host => connection_info["host"], :port => connection_info["port"], :password => connection_info["password"] }
 end
 
